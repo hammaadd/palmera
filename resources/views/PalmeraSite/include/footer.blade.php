@@ -51,8 +51,10 @@
                     <p class="text-white">
                         We will be glad to let you know more
                     </p>
-                    <form action="" class="text-center w-full mt-2">
-                        <input type="email" class="w-full bg-gray-100 bg-opacity-10 border-0 ring-0 outline-none text-white px-3 py-2">
+                    <form action="{{route('news.later')}}" class="text-center w-full mt-2" method="POST">
+                        @csrf
+                        <input type="email" id="mail" name="mail" class="w-full bg-gray-100 bg-opacity-10 border-0 ring-0 outline-none text-white px-3 py-2">
+                        <span class="ml-5 .text-warning">@error('mail'){{$message}}@enderror</span><br>
                         <input type="submit" class="btn-main">
                     </form>
                 </div>

@@ -10,6 +10,8 @@ use App\Http\Controllers\PalmeraSite\PalmeraSiteController;
 use App\Http\Controllers\PalmeraSite\OurProductController;
 use App\Http\Controllers\PalmeraSite\ContactUsController;
 use App\Http\Controllers\admin\ContactUsdataController;
+use App\Http\Controllers\PalmeraSite\NewsLaterController;
+
 
 use Illuminate\Support\Facades\Auth;
 
@@ -52,3 +54,4 @@ Route::post('/submit-contactus', [ContactUsController::class, 'submit_contact_fo
 Route::get('/edit-product/{product}', [ProductController::class, 'edit_product'])->name('edit.product');
 Route::post('/update-product/{image}', [ProductController::class, 'update_product'])->name('update.product');
 Route::get('/delete-product/{id}', [ProductController::class, 'delete_product'])->name('delete.product');
+Route::post('/news-later', [NewsLaterController::class, 'addnewslater'])->name('news.later');

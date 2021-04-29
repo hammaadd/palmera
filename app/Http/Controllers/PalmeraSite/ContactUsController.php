@@ -26,4 +26,5 @@ class ContactUsController extends Controller
         return redirect()->route('contact.us');
 
     }
+    
 }
