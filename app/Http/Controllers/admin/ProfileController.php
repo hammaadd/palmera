@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 
 class ProfileController extends Controller
@@ -53,9 +54,21 @@ class ProfileController extends Controller
             'uname' => 'required',
             'mail'=>'required',
             ]);
-            User::where('id',Auth::user()->id)->update(['name' => $request->uname,'email'=>$request->mail]);
-
-            return back();
+            if ($request->hasFile('img')) {
+                $newImagename=$request->file('img');
+                $newImagename=str_replace(' ','',time().'-'.$newImagename->getClientOriginalName());
+                $request->img->move(public_path("admin/adminprofile"),$newImagename);
+                File::delete(public_path('admin/adminprofile/'.$request->path));
+                User::where('id',Auth::user()->id)->update(['name' => $request->uname,'email'=>$request->mail,"image"=>$newImagename]);
+                return back();
+                
+            }
+            else{
+                User::where('id',Auth::user()->id)->update(['name' => $request->uname,'email'=>$request->mail]);
+                return back();
+                
+            }
+            
 
     }
 }
