@@ -14,7 +14,9 @@
                         @php
                         $address = \App\Models\shortquote::where('key','=','address')->first();
                         @endphp
+                        @isset($address)
                         {{$address->content}}
+                        @endisset
                     </p>
                     <p class=" text-white font-bold">
                         <i class="fas fa-phone-alt text-orange-500 mr-1"></i> Phone:
