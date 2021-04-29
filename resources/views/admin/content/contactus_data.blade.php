@@ -1,5 +1,5 @@
 @extends('admin.layout.adminlayout')
-@section('title','Profile Setting')
+@section('title','Messages')
     
 @section('body')
 <div class="my-5 mx-5"> 

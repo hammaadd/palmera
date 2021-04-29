@@ -30,7 +30,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('short.quote') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Short Quote</span></a>
+                    <span>Short Code</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
