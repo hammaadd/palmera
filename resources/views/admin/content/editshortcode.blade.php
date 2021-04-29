@@ -4,7 +4,7 @@
 @section('body')
 
 
-    <form action="{{ route('update.quote') }}" method="POST">
+    <form action="{{ route('update.code') }}" method="POST">
         @csrf
 
             <div class="form-group row">

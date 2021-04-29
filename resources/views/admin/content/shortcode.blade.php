@@ -6,7 +6,7 @@
 @section('body')
    
     <!--Textarea with icon prefix-->
-    <form action="{{route('add.quote')}}" method="POST">
+    <form action="{{route('add.code')}}" method="POST">
       @csrf
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group row">
@@ -51,8 +51,8 @@
                 
                 <td >{{$values->key}}</td>
                 <td >{{$values->content}}</td>
-                <td><a href="{{route ('edit.quote',$values)}}"><button type="button" class="btn btn-success">Edit</button></a></td>
-                <td><a href="{{route ('delete.quote',$values->id)}}"><button type="button" class="btn btn-danger">Delete</button><a></td>
+                <td><a href="{{route ('edit.code',$values)}}"><button type="button" class="btn btn-success">Edit</button></a></td>
+                <td><a href="{{route ('delete.code',$values->id)}}"><button type="button" class="btn btn-danger">Delete</button><a></td>
                 
               </tr>
               @endforeach 

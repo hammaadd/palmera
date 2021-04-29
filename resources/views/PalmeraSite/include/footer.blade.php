@@ -22,7 +22,13 @@
                         <i class="fas fa-phone-alt text-orange-500 mr-1"></i> Phone:
                     </p>
                     <a href="#" class="text-white hover:text-orange-500">
-                        00962 (6) 5335558
+                        @php
+                        $phone = \App\Models\shortquote::where('key','=','phone')->first();
+                        @endphp
+                        @isset($phone)
+                        {{$phone->content}}
+                        @endisset
+                        
                     </a>
                 </div>
               

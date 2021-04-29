@@ -28,7 +28,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('short.quote') }}">
+                <a class="nav-link" href="{{ route('short.code') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Short Code</span></a>
             </li>

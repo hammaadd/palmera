@@ -28,7 +28,14 @@
         </p>
         <br>
         <p class="font-bold">Call Us At</p>
-        <a href="#" class="hover:text-orange-500">+962 78 1212135</a><br><a href="#" class="hover:text-orange-500">+962 6 5335558</a>
+        <a href="#" class="hover:text-orange-500">
+            @php
+            $phone = \App\Models\shortquote::where('key','=','callus')->first();
+            @endphp
+            @isset($phone)
+            {{$phone->content}}
+            @endisset
+        </a>
     </div>
     <!-- /Description Section -->
 

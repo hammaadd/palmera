@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\admin\ContentController;
-use App\Http\Controllers\admin\ShortquoteController;
+use App\Http\Controllers\admin\ShortcodeController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\PalmeraSite\PalmeraSiteController;
@@ -35,11 +35,11 @@ Auth::routes();
 
 Route::get('/home', [DashboardController::class, 'index'])->name('home');
 Route::get('/site-content', [ContentController::class, 'content'])->name('site.content');
-Route::get('/short-qoute', [ShortquoteController::class, 'shortquote'])->name('short.quote');
-Route::post('/add-qoute', [ShortquoteController::class, 'addquote'])->name('add.quote');
-Route::get('/edit-qoute/{shortQ}', [ShortquoteController::class, 'editquote'])->name('edit.quote');
-Route::post('/update-qoute', [ShortquoteController::class, 'updatequote'])->name('update.quote');
-Route::get('/delete-qoute/{id}', [ShortquoteController::class, 'deletequote'])->name('delete.quote');
+Route::get('/short-code', [ ShortCodeController::class, 'shortcode'])->name('short.code');
+Route::post('/add-code', [ ShortCodeController::class, 'addcode'])->name('add.code');
+Route::get('/edit-code/{shortQ}', [ ShortCodeController::class, 'editcode'])->name('edit.code');
+Route::post('/update-code', [ ShortCodeController::class, 'updatecode'])->name('update.code');
+Route::get('/delete-code/{id}', [ ShortCodeController::class, 'deletecode'])->name('delete.code');
 Route::get('/messages', [ContactUsdataController::class, 'contactus_data'])->name('contactus.data');
 
 Route::get('/profile-setting', [ProfileController::class, 'profileSetting'])->name('profile.setting');
