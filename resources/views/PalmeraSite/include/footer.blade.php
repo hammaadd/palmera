@@ -69,3 +69,4 @@
         </div>
     </footer>
     <!-- /Footer -->
+    <script src="{{asset('PalmeraSite/dist/js/lightbox-plus-jquery.js')}}"></script>
