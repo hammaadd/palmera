@@ -18,7 +18,7 @@
                                 <a class="menu-link {{Request::is('our-product')? 'active-link' : '' }}" href="{{route('our.product')}}">
                                     Our Products
                                 </a>
-                                <a class="menu-link" href="#">
+                                <a class="menu-link {{Request::is('our-farms')? 'active-link' : '' }}" href="{{route('our.farms')}}">
                                     Our Farms
                                 </a>
                                 <a class="menu-link {{Request::is('contact-us')? 'active-link' : '' }}" href="{{route('contact.us')}}">

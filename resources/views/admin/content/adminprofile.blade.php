@@ -12,9 +12,10 @@
                     <div class="col-12 col-sm-auto mb-3">
                       <div class="mx-auto" style="width: 140px;">
                         <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                          <form class="form" novalidate="" method="POST" action="{{route('update.profile')}}">
+                          <form class="form" novalidate="" method="POST" action="{{route('update.profile')}}" enctype="multipart/form-data">
                             @csrf   
-                          <img style="color: rgb(166, 168, 170); font: bold 8pt Arial;" class="img-profile rounded-circle" id="img" name="img" src="{{ asset('admin/adminprofile/userprofile.svg') }}" alt="user profile">
+                          <img style="color: rgb(166, 168, 170); font: bold 8pt Arial;" class="img-profile rounded-circle" height="150px" width="150px" id="img" name="img" src="{{ asset('admin/adminprofile/'.Auth::user()->image.'') }}" alt="user profile">
+                        <input type="text" id="path" name="path" value="{{Auth::user()->image}}" hidden>
                         </div>
                       </div>
                     </div>
@@ -22,7 +23,7 @@
                       <div class="text-center text-sm-left mb-2 mb-sm-0">
                         <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{Auth::user()->name}}</h4>
                        
-                            <input type="file" class="btn btn-primary">
+                            <input type="file" class="btn btn-primary" id="img" name="img">
                             
                       </div>
                       <div class="text-center text-sm-right">

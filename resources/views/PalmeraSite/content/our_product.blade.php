@@ -24,19 +24,21 @@
     @foreach ($data as $dat)
     
     
-    <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
-        <a href="#" class="w-full block h-full">
-            <img alt="blog photo" src="{{asset('product/'.$dat->image.'')}}" class="max-h-40 w-full object-cover"/>
-            <div class="bg-white w-full p-4">
-                <p class="text-gray-900 text-xl font-medium mb-2">
-                    {{$dat->productname}}
-                </p>
-                <p class="text-gray-500 font-light text-base">
-                    {{$dat->description}}
-                </p>
-            </div>
-        </a>
-    </div>
+    
+        <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
+            <a href="{{asset('product/'.$dat->image.'')}}" data-lightbox="products" data-title="{{$dat->productname}}" class="w-full block h-full">
+                <img alt="blog photo" src="{{asset('product/'.$dat->image.'')}}" class="max-h-40 w-full object-cover"/>
+                <div class="bg-white w-full p-4">
+                    <p class="text-gray-900 text-xl font-medium mb-2">
+                        {{$dat->productname}}
+                    </p>
+                    <p class="text-gray-500 font-light text-base">
+                        {{$dat->description}}
+                    </p>
+                </div>
+            </a>
+        </div>
+    
     @endforeach
 
 </div>

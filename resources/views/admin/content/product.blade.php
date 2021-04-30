@@ -1,5 +1,5 @@
 @extends('admin.layout.adminlayout')
-@section('title','ShortQuotes')
+@section('title','Products')
     
 @section('body')
 <div class="mx-5">

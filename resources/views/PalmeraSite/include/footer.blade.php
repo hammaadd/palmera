@@ -14,13 +14,21 @@
                         @php
                         $address = \App\Models\shortquote::where('key','=','address')->first();
                         @endphp
+                        @isset($address)
                         {{$address->content}}
+                        @endisset
                     </p>
                     <p class=" text-white font-bold">
                         <i class="fas fa-phone-alt text-orange-500 mr-1"></i> Phone:
                     </p>
                     <a href="#" class="text-white hover:text-orange-500">
-                        00962 (6) 5335558
+                        @php
+                        $phone = \App\Models\shortquote::where('key','=','phone')->first();
+                        @endphp
+                        @isset($phone)
+                        {{$phone->content}}
+                        @endisset
+                        
                     </a>
                 </div>
               
@@ -49,8 +57,10 @@
                     <p class="text-white">
                         We will be glad to let you know more
                     </p>
-                    <form action="" class="text-center w-full mt-2">
-                        <input type="email" class="w-full bg-gray-100 bg-opacity-10 border-0 ring-0 outline-none text-white px-3 py-2">
+                    <form action="{{route('news.later')}}" class="text-center w-full mt-2" method="POST">
+                        @csrf
+                        <input type="email" id="mail" name="mail" class="w-full bg-gray-100 bg-opacity-10 border-0 ring-0 outline-none text-white px-3 py-2">
+                        <span class="ml-5 .text-warning">@error('mail'){{$message}}@enderror</span><br>
                         <input type="submit" class="btn-main">
                     </form>
                 </div>
@@ -59,3 +69,4 @@
         </div>
     </footer>
     <!-- /Footer -->
+    <script src="{{asset('PalmeraSite/dist/js/lightbox-plus-jquery.js')}}"></script>
