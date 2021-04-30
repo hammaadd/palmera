@@ -1,5 +1,5 @@
 @extends('PalmeraSite.layout.sitelayout')
-@section('title', 'Our Products')
+@section('title', 'Our Farms')
 @section('body')
     <!-- Top Banner Section -->
     <div class="h-48 md:h-80"
@@ -42,32 +42,42 @@
             natural healthy and affordable super food.<br>
         </h3>
     </div>
-    <!-- /Description Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 max-w-5xl mx-auto pb-10">
-
-        @foreach ($data as $dat)
-
-
-
-            <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
-                <a href="{{ asset('product/' . $dat->image . '') }}" data-lightbox="products"
-                    data-title="{{ $dat->productname }}" class="w-full block h-full">
-                    <img alt="blog photo" src="{{ asset('product/' . $dat->image . '') }}"
-                        class="max-h-40 w-full object-cover" />
-                    <div class="bg-white w-full p-4">
-                        <p class="text-gray-900 text-xl font-medium mb-2">
-                            {{ $dat->productname }}
-                        </p>
-                        <p class="text-gray-500 font-light text-base">
-                            {{ $dat->description }}
-                        </p>
-                    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-5xl mx-auto pb-10">
+    
+            <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-60 cursor-pointer m-auto " >
+                <a href="" data-lightbox="products" data-title="" class="w-full block h-full">
+                    <img alt="blog photo" src="{{asset('product/ultracare.jpg')}}" class="max-h-40 w-full object-cover"/>
+                    <p class="text-gray-900 text-xl font-medium mb-2 mt-1 text-center">
+                        Ultra Care
+                    </p>
+                    
                 </a>
             </div>
-
-        @endforeach
-
-    </div>
-    <!-- /Products Section -->+
-
+            <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-60 cursor-pointer m-auto">
+                <a href="" data-lightbox="products" data-title="" class="w-full block h-full">
+                    <img alt="blog photo" src="{{asset('product/handson.jpg')}}" class="max-h-40 w-full object-cover"/>
+                    <p class="text-gray-900 text-xl font-medium mb-2 mt-1 text-center">
+                        Hands On
+                    </p>
+                </a>
+            </div>
+            <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-60 cursor-pointer m-auto">
+                <a href="" data-lightbox="products" data-title="" class="w-full block h-full">
+                    <img alt="blog photo" src="{{asset('product/detailed.jpg')}}" class="max-h-40 w-full object-cover"/>
+                    <p class="text-gray-900 text-xl font-medium mb-2 mt-1 text-center">
+                        Detailed
+                    </p>
+                </a>
+            </div>
+            <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-60 cursor-pointer m-auto">
+                <a href="" data-lightbox="products" data-title="" class="w-full block h-full">
+                    <img alt="blog photo" src="{{asset('product/hightech.jpg')}}" class="max-h-40 w-full object-cover"/>
+                    <p class="text-gray-900 text-xl font-medium mb-2 mt-1 text-center">
+                        High Tech
+                    </p>
+                </a>
+            </div>
+        
+    
+    </div>    
 @endsection
