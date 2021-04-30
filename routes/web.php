@@ -11,8 +11,9 @@ use App\Http\Controllers\PalmeraSite\OurProductController;
 use App\Http\Controllers\PalmeraSite\ContactUsController;
 use App\Http\Controllers\admin\ContactUsdataController;
 use App\Http\Controllers\PalmeraSite\NewsLaterController;
+use App\Http\Controllers\admin\NewslaterDataController ;
 use App\Http\Controllers\PalmeraSite\OurFarmsController;
-
+;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -56,4 +57,5 @@ Route::get('/edit-product/{product}', [ProductController::class, 'edit_product']
 Route::post('/update-product/{image}', [ProductController::class, 'update_product'])->name('update.product');
 Route::get('/delete-product/{id}', [ProductController::class, 'delete_product'])->name('delete.product');
 Route::post('/news-later', [NewsLaterController::class, 'addnewslater'])->name('news.later');
+Route::get('/newslater-data', [NewslaterDataController::class, 'newslater_data'])->name('newslater.data');
 Route::get('/our-farms', [OurFarmsController::class, 'our_farms'])->name('our.farms');

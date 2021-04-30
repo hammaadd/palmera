@@ -44,6 +44,11 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Messages</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('newslater.data')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>News Later</span></a>
+            </li>
             
 
             <!-- Divider -->
