@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\shortquote;
 class OurProductController extends Controller
 {
+    
     public function ProductView(){
         $data=Product::all();
         $aboutproduct=shortquote::where('key', 'aboutproducts')->get()->first();
